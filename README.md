@@ -60,3 +60,5 @@ on Computing, Electronics & Communications Engineering (iCCECE), Southend, UK, 2
 [9] Gruca, A., Podsiadło, P. (2014). Performance Analysis of .NET Based Object–Relational Mapping Frameworks. In: Kozielski, S., Mrozek, D., Kasprowski, P., Małysiak-Mrozek, B., Kostrzewa, D. (eds) Beyond Databases, Architectures, and Structures. BDAS 2014. Communications in Computer and Information Science, vol 424. Springer, Cham. https://doi.org/10.1007/978-3-319-06932-6_5 <br />
 [10] Połeć, M., Pitera, J., & Kozieł, G. (2022). Comparing the Performance of the Object-Relational Mapping Program-ming Frameworks Available in Java. Journal of Computer Sciences Institute, 22, 59-65. https://doi.org/10.35784/jcsi.2810 <br />
 [11] Drzazga, K., Bobel, M., & Skublewska-Paszkowska, M. (2020). Comparative analysis of selected object-relational mapping systems for the .NET platform. <br />
+[12] Barnes, Jeffrey M., "Object-Relational Mapping as a Persistence Mechanism for Object-Oriented Applications" (2007). Mathematics, Statistics, and Computer Science Honors Projects. 6.
+https://digitalcommons.macalester.edu/mathcs_honors/6 <br />
