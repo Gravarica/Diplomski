@@ -1,0 +1,22 @@
+# Visual Studio Code
+.vscode/
+
+# Visual Studio
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+.vs/
+*[Oo]ut/
+*[Bb]uild/
+ReSharper*/
+*.DotSettings.user
+bin/
+obj/
+
+# IntelliJ IDEA
+*.iml
+*.ipr
+*.iws
+.idea/

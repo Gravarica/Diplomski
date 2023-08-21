@@ -1,0 +1,250 @@
+dbug: 7/25/2023 00:29:41.657 CoreEventId.QueryCompilationStarting[10111] (Microsoft.EntityFrameworkCore.Query) 
+      Compiling query expression: 
+      'DbSet<User>()
+          .Where(x => x.DateOfBirth >= __year_0)'
+dbug: 7/25/2023 00:29:41.864 CoreEventId.QueryExecutionPlanned[10107] (Microsoft.EntityFrameworkCore.Query) 
+      Generated query execution expression: 
+      'queryContext => new SingleQueryingEnumerable<User>(
+          (RelationalQueryContext)queryContext, 
+          RelationalCommandCache.QueryExpression(
+              Projection Mapping:
+                  EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: User.UserId (int) Required PK AfterSave:Throw, 0], [Property: User.DateOfBirth (DateOnly?), 1], [Property: User.Email (string) MaxLength(100), 2], [Property: User.FirstName (string) MaxLength(50), 3], [Property: User.LastName (string) MaxLength(50), 4] }
+              SELECT u.user_id, u.date_of_birth, u.email, u.first_name, u.last_name
+              FROM Users AS u
+              WHERE u.date_of_birth >= @__year_0), 
+          null, 
+          Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, User>, 
+          EntityFramework_Benchmark.Settings.BenchmarkDbContext, 
+          False, 
+          False, 
+          True
+      )'
+dbug: 7/26/2023 11:26:11.606 CoreEventId.QueryCompilationStarting[10111] (Microsoft.EntityFrameworkCore.Query) 
+      Compiling query expression: 
+      'DbSet<User>()
+          .Where(x => x.DateOfBirth >= __year_0)'
+dbug: 7/26/2023 11:26:11.797 CoreEventId.QueryExecutionPlanned[10107] (Microsoft.EntityFrameworkCore.Query) 
+      Generated query execution expression: 
+      'queryContext => new SingleQueryingEnumerable<User>(
+          (RelationalQueryContext)queryContext, 
+          RelationalCommandCache.QueryExpression(
+              Projection Mapping:
+                  EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: User.UserId (int) Required PK AfterSave:Throw, 0], [Property: User.DateOfBirth (DateOnly?), 1], [Property: User.Email (string) MaxLength(100), 2], [Property: User.FirstName (string) MaxLength(50), 3], [Property: User.LastName (string) MaxLength(50), 4] }
+              SELECT u.user_id, u.date_of_birth, u.email, u.first_name, u.last_name
+              FROM Users AS u
+              WHERE u.date_of_birth >= @__year_0), 
+          null, 
+          Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, User>, 
+          EntityFramework_Benchmark.Settings.BenchmarkDbContext, 
+          False, 
+          False, 
+          True
+      )'
+dbug: 7/26/2023 13:29:39.947 CoreEventId.QueryCompilationStarting[10111] (Microsoft.EntityFrameworkCore.Query) 
+      Compiling query expression: 
+      'DbSet<User>()
+          .Include(x => x.Posts)
+          .Select(x => new UserPostCount{ 
+              Id = (int?)x.UserId, 
+              Email = x.Email, 
+              Count = (int?)x.Posts.Count 
+          }
+          )'
+dbug: 7/26/2023 13:29:40.150 CoreEventId.QueryExecutionPlanned[10107] (Microsoft.EntityFrameworkCore.Query) 
+      Generated query execution expression: 
+      'queryContext => new SingleQueryingEnumerable<UserPostCount>(
+          (RelationalQueryContext)queryContext, 
+          RelationalCommandCache.QueryExpression(
+              Projection Mapping:
+                  Id -> 0
+                  Email -> 1
+                  Count -> 2
+              SELECT u.user_id AS Id, u.email AS Email, (
+                  SELECT COUNT(*)
+                  FROM Posts AS p
+                  WHERE (u.user_id != NULL) && (u.user_id == p.user_id)) AS Count
+              FROM Users AS u), 
+          null, 
+          Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, UserPostCount>, 
+          EntityFramework_Benchmark.Settings.BenchmarkDbContext, 
+          False, 
+          False, 
+          True
+      )'
+dbug: 7/26/2023 13:29:55.018 CoreEventId.QueryCompilationStarting[10111] (Microsoft.EntityFrameworkCore.Query) 
+      Compiling query expression: 
+      'DbSet<User>()
+          .Where(x => x.DateOfBirth >= __year_0)'
+dbug: 7/26/2023 13:29:55.163 CoreEventId.QueryExecutionPlanned[10107] (Microsoft.EntityFrameworkCore.Query) 
+      Generated query execution expression: 
+      'queryContext => new SingleQueryingEnumerable<User>(
+          (RelationalQueryContext)queryContext, 
+          RelationalCommandCache.QueryExpression(
+              Projection Mapping:
+                  EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: User.UserId (int) Required PK AfterSave:Throw, 0], [Property: User.DateOfBirth (DateTime?), 1], [Property: User.Email (string) MaxLength(100), 2], [Property: User.FirstName (string) MaxLength(50), 3], [Property: User.LastName (string) MaxLength(50), 4] }
+              SELECT u.user_id, u.date_of_birth, u.email, u.first_name, u.last_name
+              FROM Users AS u
+              WHERE u.date_of_birth >= @__year_0), 
+          null, 
+          Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, User>, 
+          EntityFramework_Benchmark.Settings.BenchmarkDbContext, 
+          False, 
+          False, 
+          True
+      )'
+dbug: 7/26/2023 13:29:55.798 CoreEventId.QueryCompilationStarting[10111] (Microsoft.EntityFrameworkCore.Query) 
+      Compiling query expression: 
+      'DbSet<User>()
+          .Include(x => x.Posts)
+          .Select(x => new UserPostCount{ 
+              Id = (int?)x.UserId, 
+              Email = x.Email, 
+              Count = (int?)x.Posts.Count 
+          }
+          )'
+dbug: 7/26/2023 13:29:55.840 CoreEventId.QueryExecutionPlanned[10107] (Microsoft.EntityFrameworkCore.Query) 
+      Generated query execution expression: 
+      'queryContext => new SingleQueryingEnumerable<UserPostCount>(
+          (RelationalQueryContext)queryContext, 
+          RelationalCommandCache.QueryExpression(
+              Projection Mapping:
+                  Id -> 0
+                  Email -> 1
+                  Count -> 2
+              SELECT u.user_id AS Id, u.email AS Email, (
+                  SELECT COUNT(*)
+                  FROM Posts AS p
+                  WHERE (u.user_id != NULL) && (u.user_id == p.user_id)) AS Count
+              FROM Users AS u), 
+          null, 
+          Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, UserPostCount>, 
+          EntityFramework_Benchmark.Settings.BenchmarkDbContext, 
+          False, 
+          False, 
+          True
+      )'
+dbug: 7/26/2023 13:30:16.463 CoreEventId.QueryCompilationStarting[10111] (Microsoft.EntityFrameworkCore.Query) 
+      Compiling query expression: 
+      'DbSet<User>()
+          .Include(x => x.Posts)
+          .Select(x => new UserPostCount{ 
+              Id = (int?)x.UserId, 
+              Email = x.Email, 
+              Count = (int?)x.Posts.Count 
+          }
+          )'
+dbug: 7/26/2023 13:30:16.642 CoreEventId.QueryExecutionPlanned[10107] (Microsoft.EntityFrameworkCore.Query) 
+      Generated query execution expression: 
+      'queryContext => new SingleQueryingEnumerable<UserPostCount>(
+          (RelationalQueryContext)queryContext, 
+          RelationalCommandCache.QueryExpression(
+              Projection Mapping:
+                  Id -> 0
+                  Email -> 1
+                  Count -> 2
+              SELECT u.user_id AS Id, u.email AS Email, (
+                  SELECT COUNT(*)
+                  FROM Posts AS p
+                  WHERE (u.user_id != NULL) && (u.user_id == p.user_id)) AS Count
+              FROM Users AS u), 
+          null, 
+          Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, UserPostCount>, 
+          EntityFramework_Benchmark.Settings.BenchmarkDbContext, 
+          False, 
+          False, 
+          True
+      )'
+dbug: 7/26/2023 13:30:30.470 CoreEventId.QueryCompilationStarting[10111] (Microsoft.EntityFrameworkCore.Query) 
+      Compiling query expression: 
+      'DbSet<User>()
+          .Where(x => x.DateOfBirth >= __year_0)'
+dbug: 7/26/2023 13:30:30.607 CoreEventId.QueryExecutionPlanned[10107] (Microsoft.EntityFrameworkCore.Query) 
+      Generated query execution expression: 
+      'queryContext => new SingleQueryingEnumerable<User>(
+          (RelationalQueryContext)queryContext, 
+          RelationalCommandCache.QueryExpression(
+              Projection Mapping:
+                  EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: User.UserId (int) Required PK AfterSave:Throw, 0], [Property: User.DateOfBirth (DateTime?), 1], [Property: User.Email (string) MaxLength(100), 2], [Property: User.FirstName (string) MaxLength(50), 3], [Property: User.LastName (string) MaxLength(50), 4] }
+              SELECT u.user_id, u.date_of_birth, u.email, u.first_name, u.last_name
+              FROM Users AS u
+              WHERE u.date_of_birth >= @__year_0), 
+          null, 
+          Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, User>, 
+          EntityFramework_Benchmark.Settings.BenchmarkDbContext, 
+          False, 
+          False, 
+          True
+      )'
+dbug: 7/26/2023 13:31:35.485 CoreEventId.QueryCompilationStarting[10111] (Microsoft.EntityFrameworkCore.Query) 
+      Compiling query expression: 
+      'DbSet<User>()
+          .Where(x => x.DateOfBirth >= __year_0)'
+dbug: 7/26/2023 13:31:35.620 CoreEventId.QueryExecutionPlanned[10107] (Microsoft.EntityFrameworkCore.Query) 
+      Generated query execution expression: 
+      'queryContext => new SingleQueryingEnumerable<User>(
+          (RelationalQueryContext)queryContext, 
+          RelationalCommandCache.QueryExpression(
+              Projection Mapping:
+                  EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: User.UserId (int) Required PK AfterSave:Throw, 0], [Property: User.DateOfBirth (DateTime?), 1], [Property: User.Email (string) MaxLength(100), 2], [Property: User.FirstName (string) MaxLength(50), 3], [Property: User.LastName (string) MaxLength(50), 4] }
+              SELECT u.user_id, u.date_of_birth, u.email, u.first_name, u.last_name
+              FROM Users AS u
+              WHERE u.date_of_birth >= @__year_0), 
+          null, 
+          Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, User>, 
+          EntityFramework_Benchmark.Settings.BenchmarkDbContext, 
+          False, 
+          False, 
+          True
+      )'
+dbug: 7/31/2023 11:52:58.104 CoreEventId.QueryCompilationStarting[10111] (Microsoft.EntityFrameworkCore.Query) 
+      Compiling query expression: 
+      'DbSet<User>()
+          .Where(x => x.DateOfBirth >= __year_0)'
+dbug: 7/31/2023 11:52:58.228 CoreEventId.QueryExecutionPlanned[10107] (Microsoft.EntityFrameworkCore.Query) 
+      Generated query execution expression: 
+      'queryContext => new SingleQueryingEnumerable<User>(
+          (RelationalQueryContext)queryContext, 
+          RelationalCommandCache.QueryExpression(
+              Projection Mapping:
+                  EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: User.UserId (int) Required PK AfterSave:Throw, 0], [Property: User.DateOfBirth (DateTime?), 1], [Property: User.Email (string) MaxLength(100), 2], [Property: User.FirstName (string) MaxLength(50), 3], [Property: User.LastName (string) MaxLength(50), 4] }
+              SELECT u.user_id, u.date_of_birth, u.email, u.first_name, u.last_name
+              FROM Users AS u
+              WHERE u.date_of_birth >= @__year_0), 
+          null, 
+          Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, User>, 
+          EntityFramework_Benchmark.Settings.BenchmarkDbContext, 
+          False, 
+          False, 
+          True
+      )'
+dbug: 7/31/2023 11:53:15.786 CoreEventId.QueryCompilationStarting[10111] (Microsoft.EntityFrameworkCore.Query) 
+      Compiling query expression: 
+      'DbSet<User>()
+          .Include(x => x.Posts)
+          .Select(x => new UserPostCount{ 
+              Id = (int?)x.UserId, 
+              Email = x.Email, 
+              Count = (int?)x.Posts.Count 
+          }
+          )'
+dbug: 7/31/2023 11:53:15.979 CoreEventId.QueryExecutionPlanned[10107] (Microsoft.EntityFrameworkCore.Query) 
+      Generated query execution expression: 
+      'queryContext => new SingleQueryingEnumerable<UserPostCount>(
+          (RelationalQueryContext)queryContext, 
+          RelationalCommandCache.QueryExpression(
+              Projection Mapping:
+                  Id -> 0
+                  Email -> 1
+                  Count -> 2
+              SELECT u.user_id AS Id, u.email AS Email, (
+                  SELECT COUNT(*)
+                  FROM Posts AS p
+                  WHERE (u.user_id != NULL) && (u.user_id == p.user_id)) AS Count
+              FROM Users AS u), 
+          null, 
+          Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, UserPostCount>, 
+          EntityFramework_Benchmark.Settings.BenchmarkDbContext, 
+          False, 
+          False, 
+          True
+      )'

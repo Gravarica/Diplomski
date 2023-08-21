@@ -1,0 +1,35 @@
+# Visual Studio Code
+.vscode/
+
+# Visual Studio
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+.vs/
+*[Oo]ut/
+*[Bb]uild/
+ReSharper*/
+*.DotSettings.user
+
+# IntelliJ IDEA
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# Python
+*.pyc
+*.pyo
+*.egg-info/
+__pycache__/
+*.pyd
+*.swp
+*.swo
+*.swn
+*.log
+*.pot
+*.db
+*.sqlite3
+*.tar.gz
