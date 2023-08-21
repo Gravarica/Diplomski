@@ -50,20 +50,20 @@
 
 ## Референтна литература и материјал
 
-[1] [EFCore GitHub Repository](https://github.com/dotnet/efcore) <br />
-[2] [Hibernate GitHub Repository](https://github.com/hibernate/hibernate-orm) <br />
-[3] [SQLAlchemy GitHub Repository](https://github.com/sqlalchemy/sqlalchemy) <br />
-[4] Van Zyl, Peter, et al. “SAICSIT ’06.” Comparing the Performance of Object Databases and ORM Tools, 2006, pp. 1–11 <br />
-[5] D. Colley, C. Stanier and M. Asaduzzaman, "The Impact of Object-Relational Mapping Frameworks on Relational Query Performance," 2018 International Conference 
+[1]   [EFCore GitHub Repository](https://github.com/dotnet/efcore) <br />
+[2]   [Hibernate GitHub Repository](https://github.com/hibernate/hibernate-orm) <br />
+[3]   [SQLAlchemy GitHub Repository](https://github.com/sqlalchemy/sqlalchemy) <br />
+[4]   Van Zyl, Peter, et al. “SAICSIT ’06.” Comparing the Performance of Object Databases and ORM Tools, 2006, pp. 1–11 <br />
+[5]   D. Colley, C. Stanier and M. Asaduzzaman, "The Impact of Object-Relational Mapping Frameworks on Relational Query Performance," 2018 International Conference 
 on Computing, Electronics & Communications Engineering (iCCECE), Southend, UK, 2018, pp. 47-52, doi: 10.1109/iCCECOME.2018.8659222. <br />
-[6] Lorenz et al. - Proceedings of the 11th International Joint Conference on Software Technologies - 2016 <br />
-[7] C. Ireland, D. Bowers, M. Newton and K. Waugh, "A Classification of Object-Relational Impedance Mismatch," 2009 First International Confernce on Advances in Databases, Knowledge, and Data Applications, Gosier, France, 2009, pp. 36-43, doi: 10.1109/DBKDA.2009.11. <br />
-[8] Cvetkovic, Stevica & Janković, Dragan. (1970). A Comparative Study of the Features and Performance of ORM Tools in a .NET Environment. 6348. 147-158. 10.1007/978-3-642-16092-9_14. <br />
-[9] Gruca, A., Podsiadło, P. (2014). Performance Analysis of .NET Based Object–Relational Mapping Frameworks. In: Kozielski, S., Mrozek, D., Kasprowski, P., Małysiak-Mrozek, B., Kostrzewa, D. (eds) Beyond Databases, Architectures, and Structures. BDAS 2014. Communications in Computer and Information Science, vol 424. Springer, Cham. https://doi.org/10.1007/978-3-319-06932-6_5 <br />
-[10] Połeć, M., Pitera, J., & Kozieł, G. (2022). Comparing the Performance of the Object-Relational Mapping Program-ming Frameworks Available in Java. Journal of Computer Sciences Institute, 22, 59-65. https://doi.org/10.35784/jcsi.2810 <br />
-[11] Drzazga, K., Bobel, M., & Skublewska-Paszkowska, M. (2020). Comparative analysis of selected object-relational mapping systems for the .NET platform. <br />
-[12] Barnes, Jeffrey M., "Object-Relational Mapping as a Persistence Mechanism for Object-Oriented Applications" (2007). Mathematics, Statistics, and Computer Science Honors Projects. 6.
+[6]   Lorenz et al. - Proceedings of the 11th International Joint Conference on Software Technologies - 2016 <br />
+[7]   C. Ireland, D. Bowers, M. Newton and K. Waugh, "A Classification of Object-Relational Impedance Mismatch," 2009 First International Confernce on Advances in Databases, Knowledge, and Data Applications, Gosier, France, 2009, pp. 36-43, doi: 10.1109/DBKDA.2009.11. <br />
+[8]   Cvetkovic, Stevica & Janković, Dragan. (1970). A Comparative Study of the Features and Performance of ORM Tools in a .NET Environment. 6348. 147-158. 10.1007/978-3-642-16092-9_14. <br />
+[9]   Gruca, A., Podsiadło, P. (2014). Performance Analysis of .NET Based Object–Relational Mapping Frameworks. In: Kozielski, S., Mrozek, D., Kasprowski, P., Małysiak-Mrozek, B., Kostrzewa, D. (eds) Beyond Databases, Architectures, and Structures. BDAS 2014. Communications in Computer and Information Science, vol 424. Springer, Cham. https://doi.org/10.1007/978-3-319-06932-6_5 <br />
+[10]  Połeć, M., Pitera, J., & Kozieł, G. (2022). Comparing the Performance of the Object-Relational Mapping Program-ming Frameworks Available in Java. Journal of Computer Sciences Institute, 22, 59-65. https://doi.org/10.35784/jcsi.2810 <br />
+[11]  Drzazga, K., Bobel, M., & Skublewska-Paszkowska, M. (2020). Comparative analysis of selected object-relational mapping systems for the .NET platform. <br />
+[12]  Barnes, Jeffrey M., "Object-Relational Mapping as a Persistence Mechanism for Object-Oriented Applications" (2007). Mathematics, Statistics, and Computer Science Honors Projects. 6.
 https://digitalcommons.macalester.edu/mathcs_honors/6 <br />
-[13] [Hibernate Documentation] (https://hibernate.org/orm/documentation/6.2/)
-[14] [Entity Framework Core Documentation] (https://learn.microsoft.com/en-us/ef/core/)
-[15] [SQLAlchemy Documentation] (https://docs.sqlalchemy.org/en/20/)
+[13]  [Hibernate Documentation] (https://hibernate.org/orm/documentation/6.2/)
+[14]  [Entity Framework Core Documentation] (https://learn.microsoft.com/en-us/ef/core/)
+[15]  [SQLAlchemy Documentation] (https://docs.sqlalchemy.org/en/20/)
