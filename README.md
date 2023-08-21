@@ -48,9 +48,9 @@
 
 ## Референтна литература и материјал
 
-[1] [EFCore Repository](https://github.com/dotnet/efcore) <br />
-[2] [Hibernate Repository](https://github.com/hibernate/hibernate-orm) <br />
-[3] [SQLAlchemy Repository](https://github.com/sqlalchemy/sqlalchemy) <br />
+[1] [EFCore GitHub Repository](https://github.com/dotnet/efcore) <br />
+[2] [Hibernate GitHub Repository](https://github.com/hibernate/hibernate-orm) <br />
+[3] [SQLAlchemy GitHub Repository](https://github.com/sqlalchemy/sqlalchemy) <br />
 [4] Van Zyl, Peter, et al. “SAICSIT ’06.” Comparing the Performance of Object Databases and ORM Tools, 2006, pp. 1–11 <br />
 [5] D. Colley, C. Stanier and M. Asaduzzaman, "The Impact of Object-Relational Mapping Frameworks on Relational Query Performance," 2018 International Conference 
 on Computing, Electronics & Communications Engineering (iCCECE), Southend, UK, 2018, pp. 47-52, doi: 10.1109/iCCECOME.2018.8659222. <br />
@@ -62,3 +62,6 @@ on Computing, Electronics & Communications Engineering (iCCECE), Southend, UK, 2
 [11] Drzazga, K., Bobel, M., & Skublewska-Paszkowska, M. (2020). Comparative analysis of selected object-relational mapping systems for the .NET platform. <br />
 [12] Barnes, Jeffrey M., "Object-Relational Mapping as a Persistence Mechanism for Object-Oriented Applications" (2007). Mathematics, Statistics, and Computer Science Honors Projects. 6.
 https://digitalcommons.macalester.edu/mathcs_honors/6 <br />
+[13] [Hibernate Documentation] (https://hibernate.org/orm/documentation/6.2/)
+[14] [Entity Framework Core Documentation] (https://learn.microsoft.com/en-us/ef/core/)
+[15] [SQLAlchemy Documentation] (https://docs.sqlalchemy.org/en/20/)
