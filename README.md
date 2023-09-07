@@ -74,6 +74,9 @@ on Computing, Electronics & Communications Engineering (iCCECE), Southend, UK, 2
 **[11]**  Drzazga, K., Bobel, M., & Skublewska-Paszkowska, M. (2020). Comparative analysis of selected object-relational mapping systems for the .NET platform. <br />
 **[12]**  Barnes, Jeffrey M., "Object-Relational Mapping as a Persistence Mechanism for Object-Oriented Applications" (2007). Mathematics, Statistics, and Computer Science Honors Projects. 6.
 https://digitalcommons.macalester.edu/mathcs_honors/6 <br />
-**[13]**  [Hibernate Documentation] (https://hibernate.org/orm/documentation/6.2/)
-**[14]**  [Entity Framework Core Documentation] (https://learn.microsoft.com/en-us/ef/core/)
-**[15]**  [SQLAlchemy Documentation] (https://docs.sqlalchemy.org/en/20/)
+**[13]**  [Hibernate Documentation] (https://hibernate.org/orm/documentation/6.2/) <br />
+**[14]**  [Entity Framework Core Documentation] (https://learn.microsoft.com/en-us/ef/core/) <br />
+**[15]**  [SQLAlchemy Documentation] (https://docs.sqlalchemy.org/en/20/) <br />
+**[16]**  Fowler, M. (2002). Patterns of enterprise Application Architecture. https://www.marcosavard.com/PageProfessionnelle/books/PatternsOfEnterpriseApplicationArchitecture/PatternsOfEnterpriseApplicationArchitecture2006Nov13.pdf <br />
+**[17]** Mihalcea, V. (2016). High-performance Java Persistence. Cluj-Naoca, Romania. <br />
+**[18]** Neward, T. (2006). The Vietnam of Computer Science.
