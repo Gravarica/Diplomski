@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace EntityFramework_Benchmark.Model;
 
-public partial class Tag
+public class Tag
 {
     public int TagId { get; set; }
 
