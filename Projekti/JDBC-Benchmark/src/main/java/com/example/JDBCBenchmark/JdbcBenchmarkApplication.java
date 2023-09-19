@@ -21,6 +21,6 @@ public class JdbcBenchmarkApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		benchmark.executeFirstReadQuery();
+		benchmark.runAll(100);
 	}
 }

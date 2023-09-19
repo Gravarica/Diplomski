@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Org.BouncyCastle.Tls;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,17 @@ namespace Native.Settings
             Console.WriteLine(" Total number of records: " + count);
 
             Console.WriteLine(" Elapsed time: " + BStopwatch.ElapsedMilliseconds() + " ms.");
+            Console.WriteLine("=================================================================");
+        }
+
+        public static void WriteElapsedTime(int i, long elapsedTime)
+        {
+            Console.WriteLine(i + ". Elapsed time for query: " + elapsedTime);
+        }
+
+        public static void WriteAverageFooter(double average)
+        {   
+            Console.WriteLine(" Average elapsed time: " + Math.Round(average, 2) + "ms.");
             Console.WriteLine("=================================================================");
         }
     }

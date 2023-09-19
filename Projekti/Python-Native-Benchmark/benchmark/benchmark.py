@@ -1,5 +1,5 @@
 from util.stopwatch import Stopwatch
-from util.result_writer import print_footer, print_header
+from util.result_writer import print_footer, print_header, print_average_footer
 from repository.post_repository import PostRepository
 from repository.user_repository import UserRepository
 from repository.tag_repository import TagRepository
@@ -16,31 +16,206 @@ class Benchmark:
         self.profile_repository = ProfileRepository(connection)
         self.stopwatch = Stopwatch()
 
-    def run_all(self):
-        self.execute_first_query()
+    def run_all(self, times):
+        # self.execute_first_query(times)
+        # self.execute_second_query(times)
+        # self.execute_third_query(times)
+        # self.execute_fourth_query(times)
+        #self.execute_fifth_query(times)
+        #self.execute_sixth_query(times)
+        #self.execute_seventh_query(times)
+        self.execute_eigth_query(times)
+        self.execute_ninth_query(times)
+        self.execute_tenth_query(times)
 
-    def execute_first_query(self):
+    def execute_first_query(self, times):
 
-        print_header("Get users born after given year.")
+        print_header("Q1")
+
+        totalMilliseconds = 0
 
         year = datetime.date(2000, 1, 1)
 
-        self.stopwatch.start()
+        for i in range (1, times):
 
-        users = self.user_repository.get_users_born_after(year)
+            self.stopwatch.start()
 
-        self.stopwatch.stop()
+            users = self.user_repository.get_users_born_after(year)
 
-        print_footer(len(users), self.stopwatch.get_milliseconds())
+            self.stopwatch.stop()
 
-    def execute_second_query(self):
+            totalMilliseconds += self.stopwatch.get_milliseconds()
 
-        print_header("Get number of posts for each user.")
+        average = totalMilliseconds*1.0 / times
+        print_average_footer(average)
 
-        self.stopwatch.start()
+    def execute_second_query(self, times):
 
-        result = self.user_repository.get_number_of_posts_for_each_user()
+        print_header("Q2")
 
-        self.stopwatch.stop()
+        totalMilliseconds = 0
 
-        print_footer(len(result), self.stopwatch.get_milliseconds())
+        for i in range(1, times):
+
+            self.stopwatch.start()
+
+            result = self.user_repository.get_number_of_posts_for_each_user()
+
+            self.stopwatch.stop()
+
+            totalMilliseconds += self.stopwatch.get_milliseconds()
+
+        average = totalMilliseconds*1.0 / times
+        print_average_footer(average)
+
+    def execute_third_query(self, times):
+
+        print_header("Q3")
+
+        totalMilliseconds = 0
+
+        for i in range(1, times):
+
+            self.stopwatch.start()
+
+            result = self.user_repository.get_top_five_users()
+
+            self.stopwatch.stop()
+
+            totalMilliseconds += self.stopwatch.get_milliseconds()
+
+        average = totalMilliseconds*1.0 / times
+        print_average_footer(average)
+
+    def execute_fourth_query(self, times):
+
+        print_header("Q4")
+
+        totalMilliseconds = 0
+
+        for i in range(1, times):
+
+            self.stopwatch.start()
+
+            result = self.user_repository.get_users_by_keyword("59")
+
+            self.stopwatch.stop()
+
+            totalMilliseconds += self.stopwatch.get_milliseconds()
+
+        average = totalMilliseconds*1.0 / times
+        print_average_footer(average)
+
+    def execute_fifth_query(self, times):
+
+        print_header("Q5")
+
+        totalMilliseconds = 0
+
+        for i in range(1, times):
+
+            self.stopwatch.start()
+
+            self.user_repository.add_user("Pera", "Petrovic", "perica@example.com", datetime.date(2000, 1, 1))
+
+            self.stopwatch.stop()
+
+            totalMilliseconds += self.stopwatch.get_milliseconds()
+
+        average = totalMilliseconds*1.0 / times
+        print_average_footer(average)
+
+    def execute_sixth_query(self, times):
+
+        print_header("Q6")
+
+        totalMilliseconds = 0
+
+        for i in range(1, times):
+
+            self.stopwatch.start()
+
+            result = self.tag_repository.count_posts_per_tag()
+
+            self.stopwatch.stop()
+
+            totalMilliseconds += self.stopwatch.get_milliseconds()
+
+        average = totalMilliseconds*1.0 / times
+        print_average_footer(average)
+
+    def execute_seventh_query(self, times):
+
+        print_header("Q7")
+
+        totalMilliseconds = 0
+
+        for i in range(1, times):
+
+            self.stopwatch.start()
+
+            result = self.tag_repository.count_tags_per_user()
+
+            self.stopwatch.stop()
+
+            totalMilliseconds += self.stopwatch.get_milliseconds()
+
+        average = totalMilliseconds*1.0 / times
+        print_average_footer(average)
+
+    def execute_eigth_query(self, times):
+
+        print_header("Q8")
+
+        totalMilliseconds = 0
+
+        for i in range(1, times):
+
+            self.stopwatch.start()
+
+            result = self.tag_repository.get_tags_by_user("user199@example.com")
+
+            self.stopwatch.stop()
+
+            totalMilliseconds += self.stopwatch.get_milliseconds()
+
+        average = totalMilliseconds*1.0 / times
+        print_average_footer(average)
+
+    def execute_ninth_query(self, times):
+
+        print_header("Q9")
+
+        totalMilliseconds = 0
+
+        for i in range(1, times):
+
+            self.stopwatch.start()
+
+            result = self.post_repository.update_posts_for_user(99, "TEXT")
+
+            self.stopwatch.stop()
+
+            totalMilliseconds += self.stopwatch.get_milliseconds()
+
+        average = totalMilliseconds*1.0 / times
+        print_average_footer(average)
+
+    def execute_tenth_query(self, times):
+
+        print_header("Q10")
+
+        totalMilliseconds = 0
+
+        for i in range(1, times):
+
+            self.stopwatch.start()
+
+            result = self.profile_repository.delete_profiles_by_phone_number("87")
+
+            self.stopwatch.stop()
+
+            totalMilliseconds += self.stopwatch.get_milliseconds()
+
+        average = totalMilliseconds*1.0 / times
+        print_average_footer(average)

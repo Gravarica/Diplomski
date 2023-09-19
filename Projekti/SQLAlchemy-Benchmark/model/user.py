@@ -12,5 +12,6 @@ class User(Base):
     last_name = Column(String(50))
     email = Column(String(50), unique=True)
     date_of_birth = Column(Date)
-    posts = relationship('Post', backref='user')
-    profile = relationship('Profile', uselist=False, backref='user')
+    posts = relationship('Post', backref='user', lazy='joined')
+    profile = relationship('Profile', uselist=False,
+                           backref='user', lazy='joined')

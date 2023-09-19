@@ -1,4 +1,5 @@
-﻿using Native.Repository.Interface;
+﻿using MySql.Data.MySqlClient;
+using Native.Repository.Interface;
 using Native.Settings;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,17 @@ namespace Native.Repository
         public ProfileRepository(IDatabaseConnection connection)
         {
             _connectionString = connection.ConnectionString;
+        }
+
+        public void DeleteProfilesWithPhoneNumber(string phoneNumber)
+        {
+            using MySqlConnection connection = new(_connectionString);
+            connection.Open();
+            MySqlCommand command = connection.CreateCommand();
+
+            command.CommandText = "DELETE FROM Profiles WHERE Profiles.phone_number LIKE @param";
+            command.Parameters.AddWithValue("@param", phoneNumber + "%");
+            command.ExecuteNonQuery();
         }
     }
 }

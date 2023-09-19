@@ -23,7 +23,13 @@ namespace EntityFramework_Benchmark.Repository
             Context = context;
         }
 
-
-
+        public void UpdateUserPosts(int userId, string text)
+        {
+            var postsForUpdate = Context.Posts
+                                    .Where(p => p.UserId == userId)
+                                    .ToList();
+            postsForUpdate.ForEach(p => p.Content = text);
+            Context.SaveChanges();
+        }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using EntityFramework_Benchmark.Model;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
 namespace EntityFramework_Benchmark.Settings;
@@ -30,7 +31,7 @@ public partial class BenchmarkDbContext : DbContext
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         optionsBuilder.UseMySql("server=127.0.0.1;port=3308;uid=root;pwd=root;database=diplomski", ServerVersion.Parse("8.0.34-mysql"));
-        optionsBuilder.LogTo(_logStream.WriteLine, new[] { DbLoggerCategory.Query.Name });
+        optionsBuilder.LogTo(_logStream.WriteLine, LogLevel.Information);
     }
 
     public override void Dispose()

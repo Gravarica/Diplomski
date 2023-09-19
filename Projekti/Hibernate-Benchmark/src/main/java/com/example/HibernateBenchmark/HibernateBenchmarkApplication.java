@@ -1,6 +1,7 @@
 package com.example.HibernateBenchmark;
 
 import com.example.HibernateBenchmark.benchmark.Benchmark;
+import jakarta.persistence.EntityManagerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -20,6 +21,6 @@ public class HibernateBenchmarkApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		benchmark.executeFirstReadQuery();
+		benchmark.runAll(100);
 	}
 }

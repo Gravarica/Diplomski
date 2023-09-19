@@ -8,5 +8,6 @@ namespace Native.Repository.Interface
 {
     public interface IProfileRepository
     {
+        void DeleteProfilesWithPhoneNumber(string phoneNumber);
     }
 }

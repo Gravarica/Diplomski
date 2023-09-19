@@ -13,4 +13,9 @@ public class ResultWriter {
         System.out.println(" Elapsed time: " + time + " ms.");
         System.out.println("=================================================================");
     }
+
+    public static void writeAverageFooter(double average) {
+        System.out.println("Finished running tests for query.");
+        System.out.println(" Elapsed time: " + Math.round(average*100)/100 + " ms.");
+    }
 }

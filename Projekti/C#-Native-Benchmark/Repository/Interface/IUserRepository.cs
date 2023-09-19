@@ -13,5 +13,11 @@ namespace Native.Repository.Interface
         List<User> GetUsersBornAfter(DateTime year);
 
         List<UserPostCount> GetNumberOfPostsForEachUser();
+
+        List<UserPostCount> GetTopFiveUsersByPostCount();
+
+        List<UserProfile> GetUsersWithKeywordInBio(string keyword);
+
+        void InsertUser(User user);
     }
 }

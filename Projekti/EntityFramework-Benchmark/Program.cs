@@ -31,6 +31,6 @@ class Program
 
         var benchmark = scope.ServiceProvider.GetService<Benchmark>();
 
-        benchmark.ExecuteSecondReadQuery();
+        benchmark?.RunAll(100);
     }
 }

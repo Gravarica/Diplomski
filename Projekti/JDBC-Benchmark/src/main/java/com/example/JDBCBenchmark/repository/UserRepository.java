@@ -1,8 +1,10 @@
 package com.example.JDBCBenchmark.repository;
 
 import com.example.JDBCBenchmark.dto.UserPostCount;
+import com.example.JDBCBenchmark.dto.UserProfile;
 import com.example.JDBCBenchmark.mappers.UserMapper;
 import com.example.JDBCBenchmark.mappers.UserPostCountMapper;
+import com.example.JDBCBenchmark.mappers.UserProfileMapper;
 import com.example.JDBCBenchmark.model.User;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
@@ -42,12 +44,57 @@ public class UserRepository {
     }
 
     public List<UserPostCount> findUsersWithPostCount() {
-        String query =  "SELECT u.user_id, u.email, COUNT(p.user_id) " +
-                        "FROM Users u, Posts p" +
-                        "WHERE u.user_id = p.user_id" +
-                        "GROUP BY p.user_id";
+        String query =  "SELECT u.user_id, u.email, COUNT(p.post_id) " +
+                "FROM Users AS u " +
+                "LEFT OUTER JOIN Posts AS p ON u.user_id = p.user_id " +
+                "GROUP BY u.user_id";
 
         return jdbc.query(query, new UserPostCountMapper());
+    }
+
+    public List<UserPostCount> findTopPosters() {
+        String query =  "SELECT u.user_id, u.email, COUNT(p.post_id) as total_posts " +
+                "FROM Users as u, Posts as p " +
+                "WHERE u.user_id = p.user_id " +
+                "GROUP BY u.user_id " +
+                "ORDER BY total_posts DESC " +
+                "LIMIT 5";
+
+        return jdbc.query(query, new UserPostCountMapper());
+    }
+
+    public List<UserProfile> findUsersByBioKeyword(String keyword){
+        PreparedStatementCreator preparedStatementCreator = new PreparedStatementCreator() {
+            @Override
+            public PreparedStatement createPreparedStatement(Connection con) throws SQLException {
+                String query = "SELECT u.user_id, u.email, p.bio " +
+                        "FROM Users u, Profiles p " +
+                        "WHERE u.user_id = p.user_id " +
+                        "AND p.bio LIKE ?";
+                PreparedStatement ps = con.prepareStatement(query);
+                ps.setString(1, "%" + keyword + "%");
+                return ps;
+            }
+        };
+
+        return jdbc.query(preparedStatementCreator, new UserProfileMapper());
+    }
+
+    public void addNewUser(User user) {
+        PreparedStatementCreator preparedStatementCreator = new PreparedStatementCreator() {
+            @Override
+            public PreparedStatement createPreparedStatement(Connection con) throws SQLException {
+                String query = "INSERT INTO Users (first_name, last_name, email, date_of_birth) VALUES (?,?,?,?)";
+                PreparedStatement ps = con.prepareStatement(query);
+                ps.setString(1, user.getFirstName());
+                ps.setString(2, user.getLastName());
+                ps.setString(3, user.getEmail());
+                ps.setDate(4, Date.valueOf(user.getDateOfBirth()));
+                return ps;
+            }
+        };
+
+        jdbc.update(preparedStatementCreator);
     }
 
     public List<User> firstQueryNative() {

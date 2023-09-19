@@ -8,5 +8,6 @@ namespace EntityFramework_Benchmark.Repository.IRepository
 {
     public interface IProfileRepository
     {
+        void DeleteProfilesWithPhoneNumber(string phoneNumber);
     }
 }

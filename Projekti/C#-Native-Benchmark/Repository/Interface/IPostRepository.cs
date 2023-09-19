@@ -8,5 +8,6 @@ namespace Native.Repository.Interface
 {
     public interface IPostRepository
     {
+        void UpdateUserPosts(int userId, string text);
     }
 }

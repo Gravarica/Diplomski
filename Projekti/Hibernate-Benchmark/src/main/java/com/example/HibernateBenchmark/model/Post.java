@@ -34,7 +34,7 @@ public class Post {
     private User user;
 
     @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable( name = "Post_tags",
+    @JoinTable( name = "Post_Tags",
                 joinColumns = @JoinColumn(name = "post_id"),
                 inverseJoinColumns = @JoinColumn(name = "tag_id"))
     private List<Tag> tags;

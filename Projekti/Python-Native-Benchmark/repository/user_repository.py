@@ -15,14 +15,14 @@ class UserRepository:
             cursor.execute("SELECT * FROM users WHERE id = %s", (user_id,))
             return cursor.fetchone()
 
-    def create_user(self, user_data):
+    def add_user(self, first_name, last_name, email, date):
         with self.conn.cursor() as cursor:
             cursor.execute(
-                "INSERT INTO users (username, email, password) VALUES (%s, %s, %s)",
-                (user_data["username"], user_data["email"], user_data["password"])
+                "INSERT INTO Users (first_name, last_name, email, date_of_birth) VALUES (%s, %s, %s, %s)",
+                (first_name, last_name, email, date)
             )
             self.conn.commit()
-            return cursor.lastrowid  # Return the id of newly created user
+            return cursor.lastrowid 
         
     def get_users_born_after(self, year):
 
@@ -55,4 +55,41 @@ class UserRepository:
             users.append(tuple((user_id, email, count)))
 
         return users
+    
+    def get_top_five_users(self):
+
+        query =  "SELECT u.user_id, u.email, COUNT(p.post_id) " 
+        query += "FROM Users AS u " 
+        query += "LEFT OUTER JOIN Posts AS p ON u.user_id = p.user_id " 
+        query +=  "GROUP BY u.user_id"
+
+        users = []
+
+        with self.conn.cursor(buffered=True) as cursor: 
+            cursor.execute(query)
+
+        for (user_id, email, count) in cursor:
+            users.append(tuple((user_id, email, count)))
+
+        return users
+    
+    def get_users_by_keyword(self, keyword):
+
+        query =  "SELECT u.user_id, u.email, p.bio "
+        query += "FROM Users u, Profiles p "
+        query += "WHERE u.user_id = p.user_id "
+        query += "AND p.bio LIKE (%s)"
+
+        users = [] 
+        params = []
+        params.append(keyword + "%")
+
+        with self.conn.cursor(buffered=True) as cursor:
+            cursor.execute(query, params)
+
+        for (user_id, email, bio) in cursor: 
+            users.append(tuple((user_id, email, bio)))
+
+        return users
+
         

@@ -7,4 +7,4 @@ connection = db.connect()
 
 benchmark = Benchmark(connection)
 
-benchmark.execute_second_query()
+benchmark.run_all(100)

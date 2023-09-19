@@ -1,6 +1,7 @@
 package com.example.HibernateBenchmark.repository;
 
 import com.example.HibernateBenchmark.dto.UserPostCount;
+import com.example.HibernateBenchmark.dto.UserProfile;
 import com.example.HibernateBenchmark.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -21,4 +22,12 @@ public interface UserRepository extends JpaRepository<User, Integer> {
     @Query( "SELECT new com.example.HibernateBenchmark.dto.UserPostCount(u.userId, u.email, size(u.posts))" +
             "FROM User u")
     List<UserPostCount> findUsersWithPostCount();
+
+    @Query("SELECT u.userId, u.email, p.bio FROM Profile p JOIN p.user u WHERE p.bio LIKE %:keyword%")
+    List<UserProfile> findUsersByBioKeyword(@Param("keyword") String keyword);
+
+    @Query("SELECT new com.example.HibernateBenchmark.dto.UserPostCount(u.userId, u.email, size(u.posts))" +
+            " FROM User u JOIN u.posts p GROUP BY u.userId ORDER BY COUNT(p.postId) DESC LIMIT 5")
+    List<Object[]> findTopPosters();
+
 }

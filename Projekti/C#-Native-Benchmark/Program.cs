@@ -32,7 +32,7 @@ class Program
 
         var benchmark = scope.ServiceProvider.GetService<Benchmark>();
 
-        benchmark?.RunAll();
+        benchmark?.RunAll(100);
 ;    }
 }
 

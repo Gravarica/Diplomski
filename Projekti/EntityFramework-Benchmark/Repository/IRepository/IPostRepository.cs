@@ -8,5 +8,6 @@ namespace EntityFramework_Benchmark.Repository.IRepository
 {
     public interface IPostRepository
     {
+        void UpdateUserPosts(int userId, string text);
     }
 }

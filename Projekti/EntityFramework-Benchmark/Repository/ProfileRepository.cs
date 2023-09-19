@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 
 namespace EntityFramework_Benchmark.Repository
 {
@@ -20,6 +21,17 @@ namespace EntityFramework_Benchmark.Repository
         public ProfileRepository(BenchmarkDbContext context) 
         {
             Context = context;
+        }
+
+        public void DeleteProfilesWithPhoneNumber(string phoneNumber)
+        {
+            var transaction = Context.Database.BeginTransaction();
+            var profilesToDelete = Context.Profiles
+                                    .Where(p => p.PhoneNumber.Contains(phoneNumber))
+                                    .ToList();
+            Context.Profiles.RemoveRange(profilesToDelete);
+            Context.SaveChanges();
+            transaction.Rollback();
         }
     }
 }

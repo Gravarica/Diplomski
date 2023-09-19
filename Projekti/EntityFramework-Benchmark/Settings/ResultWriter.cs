@@ -22,5 +22,16 @@ namespace EntityFramework_Benchmark.Settings
             Console.WriteLine(" Elapsed time: " + BStopwatch.ElapsedMilliseconds() + " ms.");
             Console.WriteLine("=================================================================");
         }
+
+        public static void WriteElapsedTime(int i, long elapsedTime)
+        {
+            Console.WriteLine(i + ". Elapsed time for query: " + elapsedTime);
+        }
+
+        public static void WriteAverageFooter(double average)
+        {
+            Console.WriteLine(" Average elapsed time: " + Math.Round(average, 2) + "ms.");
+            Console.WriteLine("=================================================================");
+        }
     }
 }
